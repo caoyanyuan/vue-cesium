@@ -1,15 +1,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 const Event  = () => import('../views/event.vue')
+const Click  = () => import('../views/click.vue')
+
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Click',
+    component: Click
   },
   {
     path: '/event',

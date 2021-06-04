@@ -3,12 +3,12 @@
   <div class="home">
     <div :id="ctl.id" class="map-box"></div>
     <div id='cesiumContainer-0'  />
+    <router-view></router-view>
   </div>
 </template>
  
 <script>
 import MainCtl from "./Model/MainCtl"
-import Ship from "./Model/entities/Ship"
 
 export default {
   data() {
@@ -24,26 +24,10 @@ export default {
   },
   mounted() {
     MainCtl.init()
-    this.addCameras()
   },
   computed: {},
   methods: {
-    addGeoJson() {
-      this.ctl.addGeoJson('shen-4.json')
-    },
-    addCameras() {
-      var cameraPosition=[
-          { position: { lng: 113.922513, lat:22.487255 }, detail: { label: '北岸（正对港口）', } },
-          { position: { lng: 113.923988, lat:22.486308 }, detail: { label: '利安大厦楼顶' ,} },
-          { position: { lng: 113.925763, lat:22.485441 }, detail: { label: '渔港大楼楼顶' ,} },
-          { position: { lng: 113.921928, lat:22.484177 }, detail: { label: '执法船码头' ,} },
-          { position: { lng: 113.921654, lat:22.482268 }, detail: { label: '渔港进出口' ,} },
-      ];
-      cameraPosition.map(item => {
-        let x = new Ship(item)
-        console.log(x)
-      })
-    }
+   
 
   }
 };
